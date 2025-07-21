@@ -1,0 +1,45 @@
+C++ STL Complete Cheat Sheet
+
+1. Containers
+- Vector: dynamic array (vector<int> v)
+- Deque: double-ended queue (deque<int> dq)
+- List: doubly linked list (list<int> l)
+- Stack: LIFO (stack<int> s)
+- Queue: FIFO (queue<int> q)
+- Priority Queue: max-heap by default (priority_queue<int> pq)
+- Set: sorted unique elements (set<int> s)
+- Multiset: sorted non-unique elements (multiset<int> ms)
+- Unordered Set: hash set (unordered_set<int> us)
+- Map: key-value pairs (map<int, string> m)
+- Multimap: duplicate keys allowed (multimap<int, string> mm)
+- Unordered Map: hash map (unordered_map<int, string> um)
+- Bitset: space-efficient binary container (bitset<10> b)
+
+2. Iterators
+- begin(), end(): start and one-past-the-end
+- rbegin(), rend(): reverse iterators
+- advance(it, n): move iterator forward
+- next(it), prev(it): move forward/backward by one
+- distance(it1, it2): number of elements between two iterators
+- auto: automatically deduce iterator type
+
+3. Algorithms
+- sort(), stable_sort(), partial_sort(), nth_element()
+- reverse(), rotate(), shuffle(), random_shuffle() [deprecated]
+- find(), find_if(), count(), count_if()
+- binary_search(), lower_bound(), upper_bound(), equal_range()
+- accumulate(), inner_product(), adjacent_difference(), partial_sum()
+- min(), max(), min_element(), max_element()
+- next_permutation(), prev_permutation()
+- unique(), remove(), remove_if(), replace(), replace_if()
+- all_of(), any_of(), none_of()
+- copy(), copy_if(), transform(), fill(), generate(), iota()
+- set_union(), set_intersection(), set_difference(), set_symmetric_difference()
+- is_sorted(), is_heap(), is_partitioned(), includes()
+
+4. Functors and Functional Utilities
+- less<T>(), greater<T>(), equal_to<T>() - used in sorting and comparisons
+- not_equal_to<T>(), less_equal<T>(), greater_equal<T>()
+- function<T> - general purpose function wrapper
+- bind(), mem_fn(), reference_wrapper - used for functional programming
+- lambda functions - inline anonymous functions
