@@ -1,4 +1,4 @@
-// Get the minimum element and swap it with the first element.
+// Push the Maximum element to the last by swapping the adjacent element repeatedly.
 #include <bits/stdc++.h>
 using namespace std;
 
