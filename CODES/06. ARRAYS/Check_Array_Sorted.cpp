@@ -20,7 +20,7 @@ int main()
     }
     else
     {
-        cout << "Yes" << ends;
+        cout << "Yes" << endl;
     }
 
     return 0;
