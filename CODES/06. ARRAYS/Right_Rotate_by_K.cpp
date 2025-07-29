@@ -4,9 +4,9 @@ using namespace std;
 // Optimal approach to decrease space complexity to O(1) but time complexoty increases to O(2n).
 void Right_Rotate_OPTIMAL(int arr[], int n, int k)
 {
+    reverse(arr, arr + n);
     reverse(arr, arr + k);
     reverse(arr + k, arr + n);
-    reverse(arr, arr + n);
 }
 
 // Brute force approach---> Time complexity is O(n+d) and (extra) Space complexity is O(d);
