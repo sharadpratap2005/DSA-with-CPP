@@ -71,3 +71,36 @@ class Solution {
 
     }
 };
+
+
+//another method just to swap the data
+class Solution {
+public:
+    ListNode* swapNodes(ListNode* head, int k) { 
+        // first find the length of a Linkedin List
+        // base case
+        if(head == NULL) {
+            return NULL;
+        }
+        int length = 0;
+        ListNode* temp = head;
+        while(temp) {
+            length++;
+            temp = temp -> next;
+        }
+        // reach to the kth node
+        ListNode* first = head;
+        for(int i = 1; i < k; i++) {
+            first = first -> next;
+        }
+
+        ListNode* last = head;
+        // reach to the kth node from the end 
+        for(int i = 1; i < length - k + 1; i++) {
+            last = last -> next;
+        }
+        swap(first -> val, last -> val);
+        return head;
+    }
+};
+
