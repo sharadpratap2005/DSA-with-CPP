@@ -1,4 +1,5 @@
 //My code Brute force but does not pass all the testcases
+//Time Complexity --> O(n3) & Space Complexity --> O(1)
 class Solution {
 public:
     int numberOfPairs(vector<vector<int>>& points) {
@@ -16,7 +17,7 @@ public:
                     // for A (x1,y1) and B(x2,y2) to form the pair check the
                     // condtion
                     // first condition to check if  a is at upper left side of b
-                    if (x1 < x2 && y1 > y2) {
+                    if (x1 <= x2 && y1 => y2) {
                         bool valid = true;
                         // if a is at upper left side of b
                         // now
@@ -42,5 +43,46 @@ public:
             }
         }
         return count;
+    }
+};
+
+//Better Solution --> Using sorting in a manner such that x is sorted in ascending order and y sorted in descending order.  the x2 will always be greater which we recquired . now check only for rectangle condition if y2>y1 continue. and track all other y other than y1 if they are maximum 
+class Solution {
+public:
+    int numberOfPairs(vector<vector<int>>& points) {
+        int result = 0;
+        int n = points.size();
+        // custom comparator
+        auto lambda = [](vector<int>& p1, vector<int>& p2) {
+            if (p1[0] == p2[0]) {
+                return p1[1] > p2[1];
+            }
+            return p1[0] < p2[0];
+        };
+        // sort using custom comparator
+        sort(points.begin(), points.end(), lambda);
+
+        for (int i = 0; i < n; i++) {
+            // A - point (x1,y1)
+            int x1 = points[i][0];
+            int y1 = points[i][1];
+
+            int maxY = INT_MIN;
+
+            for (int j = i + 1; j < n; j++) {
+                // B - point (x2,y2)
+                int x2 = points[j][0];
+                int y2 = points[j][1];
+
+                if (y2 > y1)
+                    continue;
+
+                if (y2 > maxY) {
+                    result++;
+                    maxY = y2;
+                }
+            }
+        }
+        return result;
     }
 };
