@@ -7,6 +7,7 @@ class Solution {
         int ans = arr[n-1]-arr[0];//intitial differnence
         int smallest = arr[0]+k;
         int largest = arr[n-1]-k;
+      
         
         for(int i=0;i<n-1;i++){
             int min_height=min(smallest,arr[i+1]-k);
