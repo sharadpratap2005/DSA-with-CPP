@@ -11,6 +11,14 @@ bool custom_comparator(pair<int, int> p1, pair<int, int> p2)
         return true;
     return false;
 }
+//sort the array elements according to their frequency 
+auto comp=[&](const int& a, int& b){
+            if(freq[a] != freq[b]){
+                return freq[a]<freq[b];
+            }
+            return a>b;
+        };
+        sort(nums.begin(), nums.end(), comp);
 int main()
 {
     pair<int, int> p[] = {{1, 2}, {3, 6}, {4, 3}, {6, 4}, {8, 6}, {2, 6}};
@@ -21,4 +29,5 @@ int main()
         cout << it.first << " , " << it.second << endl;
     }
     return 0;
+
 }
