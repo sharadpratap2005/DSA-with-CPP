@@ -16,4 +16,18 @@ public:
         }
         return ans;
     }
+
+};
+
+/*we can do it in single pass only as the number of partitions will depend on the nature of total sum. if the sum is even it will have n-1 all partitions as valid partitions otherwise it will have zero partitions. */
+class Solution {
+public:
+    int countPartitions(vector<int>& nums) {
+        int n = nums.size();
+        int sum = 0;
+        for (int val : nums) {
+            sum += val;
+        }
+        return (sum % 2 == 0) ? n - 1 : 0;
+    }
 };
