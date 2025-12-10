@@ -25,3 +25,22 @@ public:
         return ans;
     }
 };
+
+
+
+class Solution {
+public:
+    int M = 1e9 + 7;
+    int countPermutations(vector<int>& complexity) {
+        long long ans = 1;
+        int n = complexity.size();
+
+        for (int i = 1; i < n; i++) {
+            if (complexity[i] <= complexity[0])
+                return 0;
+
+            ans = (ans * i) % M;
+        }
+        return ans;
+    }
+};
